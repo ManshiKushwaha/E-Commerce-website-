@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savory Bites | Premium Dining Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f7;
+        }
+        
+        .hero {
+            background-image: url('images/image34.jpg');
+            background-size: cover;
+            background-position:center;
+            min-height: 80vh;
+        }
+        
+        .food-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .cart-item {
+            border-bottom: 1px dashed #e5e7eb;
+        }
+        
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        
+        .menu-category {
+            scroll-margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <img src="images/image33.jpeg" alt="Savory Bites restaurant logo with fork and knife icon" class="h-10 mr-2">
+                    <span class="text-xl font-bold text-gray-800 font-['Playfair_Display']">Savory Bites</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-800 hover:text-amber-600">Home</a>
+                    <a href="#menu" class="text-gray-800 hover:text-amber-600">Menu</a>
+                    <a href="#about" class="text-gray-800 hover:text-amber-600">About</a>
+                    <a href="#contact" class="text-gray-800 hover:text-amber-600">Contact</a>
+                    <button id="cart-btn" class="relative px-4 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        Cart
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    <button id="mobile-cart-btn" class="ml-4 relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span id="mobile-cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md pb-4">
+            <a href="#home" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Home</a>
+            <a href="#menu" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Menu</a>
+            <a href="#about" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero flex items-center justify-center text-center text-white pt-20">
+        <div class="px-4 py-16 max-w-4xl">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 font-['Playfair_Display']">Artisanal Cuisine <br>Crafted with Passion</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Experience our chef's signature dishes made with locally-sourced ingredients and traditional techniques</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#menu" class="px-8 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all">Explore Menu</a>
+                <a href="#reservations" class="px-8 py-3 bg-white text-gray-800 rounded-lg hover:bg-gray-100 transition-all">Book a Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-10">
+                    <img src="images/image31.jpg" alt="Chef preparing food in Savory Bites kitchen with fresh ingredients" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6 font-['Playfair_Display']">Our Story</h2>
+                    <p class="text-gray-600 mb-4">Founded in 2010, Savory Bites began as a small family-owned bistro with a passion for bringing authentic flavors to our community.</p>
+                    <p class="text-gray-600 mb-6">Today, we've grown into a premier dining destination while maintaining our commitment to quality, sustainability, and exceptional service.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center">
+                            <div class="bg-amber-100 p-3 rounded-full mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <span>Locally sourced ingredients</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-amber-100 p-3 rounded-full mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <span>Affordable luxury</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-amber-100 p-3 rounded-full mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                                </svg>
+                            </div>
+                            <span>Seasonal specialties</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-amber-100 p-3 rounded-full mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                                </svg>
+                            </div>
+                            <span>Food blogger approved</span>
+                        </div>
+                    </div>
+                    <button class="px-6 py-2 border border-amber-600 text-amber-600 rounded-lg hover:bg-amber-50 transition-all">Meet Our Chef</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 font-['Playfair_Display']">Our Menu</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Seasonal selections crafted with the freshest ingredients available</p>
+            </div>
+            
+            <!-- Menu Categories -->
+            <div class="flex overflow-x-auto pb-4 mb-8 scroll-smooth hide-scrollbar">
+                <div class="flex space-x-4">
+                    <button class="category-btn px-6 py-2 rounded-full bg-amber-600 text-white whitespace-nowrap" data-category="starters">Starters</button>
+                    <button class="category-btn px-6 py-2 rounded-full bg-white text-gray-800 whitespace-nowrap" data-category="mains">Main Courses</button>
+                    <button class="category-btn px-6 py-2 rounded-full bg-white text-gray-800 whitespace-nowrap" data-category="desserts">Desserts</button>
+                    <button class="category-btn px-6 py-2 rounded-full bg-white text-gray-800 whitespace-nowrap" data-category="drinks">Drinks</button>
+                    <button class="category-btn px-6 py-2 rounded-full bg-white text-gray-800 whitespace-nowrap" data-category="specials">Chef's Specials</button>
+                </div>
+            </div>
+            
+            <!-- Starters -->
+            <div id="starters" class="menu-category mb-16">
+                <h3 class="text-2xl font-bold mb-6 font-['Playfair_Display'] border-b pb-2">Starters</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Item 1 -->
+                <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+                    <div class="relative h-48 overflow-hidden">
+                       <img src="images/image1.jpg" alt="Truffle arancini balls with parmesan crisp and herb garnish" class="w-full h-full object-cover">
+                    </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold">Truffle Arancini</h4>
+                        <span class="text-lg font-bold text-amber-600">$9.50</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Crispy risotto balls infused with black truffle and fontina cheese, served with a roasted garlic aioli</p>
+                    <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="1" 
+                        data-name="Truffle Arancini" 
+                        data-price="9.50" 
+                        data-image=<img src="images/image1.jpg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image2.jpeg" alt="Charcuterie board with assorted cured meats, cheeses, olives and artisan bread" class="w-full h-full object-cover">
+                <div class="absolute top-0 right-0 bg-green-500 text-white px-3 py-1 m-2 rounded-full text-sm"></div>
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Artisan Charcuterie</h4>
+                    <span class="text-lg font-bold text-amber-600">$14.00</span>
+                </div>
+                <p class="text-gray-600 mb-4">Selection of cured meats, house-made pickles, local cheeses, honeycomb and toasted baguette</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="2" 
+                        data-name="Artisan Charcuterie" 
+                        data-price="14.00" 
+                        data-image=<img src="images/image2.jpeg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image3.jpeg" alt="olden fried calamari with lemon wedges and dipping sauce" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Crispy Calamari</h4>
+                    <span class="text-lg font-bold text-amber-600">$11.00</span>
+                </div>
+                <p class="text-gray-600 mb-4">Lightly fried squid served with spicy marinara and lemon aioli dipping sauces</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="3" 
+                        data-name="Crispy Calamari" 
+                        data-price="11.00" 
+                        data-image=<img src="images/image3.jpeg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image4.jpeg" alt="Garlic chili shrimp with crusty bread" class="w-full h-full object-cover">
+                <div class="absolute top-0 right-0 bg-purple-500 text-white px-3 py-1 m-2 rounded-full text-sm">Sommelier Pick</div>
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Garlic Chili Shrimp</h4>
+                    <span class="text-lg font-bold text-amber-600">$13.00</span>
+                </div>
+                <p class="text-gray-600 mb-4">Jumbo shrimp sautéed with garlic, chili flakes, and white wine, served with crusty bread</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="4" 
+                        data-name="Garlic Chili Shrimp" 
+                        data-price="13.00" 
+                        data-image=<img src="images/image4.jpeg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image5.jpg" alt="Burrata salad with toasted sourdough" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Burrata Salad</h4>
+                    <span class="text-lg font-bold text-amber-600">$12.00</span>
+                </div>
+                <p class="text-gray-600 mb-4">Fresh burrata served with heirloom tomatoes, basil pesto, and toasted sourdough</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="5" 
+                        data-name="Burrata Salad" 
+                        data-price="12.00" 
+                        data-image=<img src="images/image5.jpg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image6.jpeg" alt="Heirloom Tomato Bruschetta with garlic and aged balsamic" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Heirloom Tomato Bruschetta</h4>
+                    <span class="text-lg font-bold text-amber-600">$8.50</span>
+                </div>
+                <p class="text-gray-600 mb-4">Toasted ciabatta with vine-ripened tomatoes, fresh basil, garlic, and aged balsamic</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="6" 
+                        data-name="Sparkling Water" 
+                        data-price="8.50" 
+                        data-image=<img src="images/image6.jpeg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- Mains -->
+            <div id="mains" class="menu-category mb-16" >
+                <h3 class="text-2xl font-bold mb-6 font-['Playfair_Display'] border-b pb-2">Main Courses</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Item 1-->
+                <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/image7.jpeg" alt="Grilled ribeye steak with roasted vegetables and red wine reduction" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-xl font-bold">Ribeye Steak</h4>
+                            <span class="text-lg font-bold text-amber-600">$33.00</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">14oz grass-fed ribeye with roasted garlic mashed potatoes, seasonal vegetables and red wine reduction</p>
+                        <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                               data-id="7" 
+                               data-name="Ribeye Steak" 
+                               data-price="33.00" 
+                               data-image=<img src="images/image7.jpeg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image8.jpeg" alt="Pan-seared salmon with asparagus and lemon beurre blanc sauce" class="w-full h-full object-cover">
+                <div class="absolute top-0 right-0 bg-green-500 text-white px-3 py-1 m-2 rounded-full text-sm"></div>
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Pan-Seared Salmon</h4>
+                    <span class="text-lg font-bold text-amber-600">$26.50</span>
+                </div>
+                <p class="text-gray-600 mb-4">Wild-caught salmon with lemon beurre blanc, roasted asparagus and herbed quinoa pilaf</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="8" 
+                        data-name="Pan-Seared Salmon" 
+                        data-price="26.50" 
+                        data-image=<img src="images/image8.jpeg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image9.jpeg" alt="Roasted chicken with crispy skin served with vegetables" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Herb-Roasted Chicken</h4>
+                    <span class="text-lg font-bold text-amber-600">$22.00</span>
+                </div>
+                <p class="text-gray-600 mb-4">Half chicken roasted with rosemary and thyme, served with garlic mashed potatoes and seasonal vegetables</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="9" 
+                        data-name="Local IPA" 
+                        data-price="22.00" 
+                        data-image=<img src="images/image9.jpeg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image10.jpg" alt="Pasta with vegetables and garlic souce" class="w-full h-full object-cover">
+                <div class="absolute top-0 right-0 bg-purple-500 text-white px-3 py-1 m-2 rounded-full text-sm"></div>
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Pasta Primavera </h4>
+                    <span class="text-lg font-bold text-amber-600">$19.00</span>
+                </div>
+                <p class="text-gray-600 mb-4">Fresh pasta tossed with seasonal vegetables and a light garlic sauce</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="10" 
+                        data-name="Pasta Primavera " 
+                        data-price="19.00" 
+                        data-image=<img src="images/image10.jpg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image11.jpg" alt="Tacos with grilled shrimp and avocado" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Grilled Shrimp Tacos</h4>
+                    <span class="text-lg font-bold text-amber-600">$15.00</span>
+                </div>
+                <p class="text-gray-600 mb-4">Soft corn tortillas filled with grilled shrimp, avocado, and fresh salsa</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="11" 
+                        data-name="Grilled Shrimp Tacos" 
+                        data-price="15.00" 
+                        data-image=<img src="images/image11.jpg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image12.jpg" alt="Tofu and vegetables with stir-fried in soy sauce" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Vegetarian Stir-Fry </h4>
+                    <span class="text-lg font-bold text-amber-600">$16.00</span>
+                </div>
+                <p class="text-gray-600 mb-4">Tofu and seasonal vegetables stir-fried in a savory soy sauce, served over rice</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="12" 
+                        data-name="Vegetarian Stir-Fry " 
+                        data-price="16.00" 
+                        data-image=<img src="images/image12.jpg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+</div> 
+            <!-- Desserts -->
+             <div id="desserts" class="menu-category mb-16">
+                 <h3 class="text-2xl font-bold mb-6 font-['Playfair_Display'] border-b pb-2">Desserts</h3>
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                 <!-- Item 1 -->
+                <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="images/image13.jpg" alt="Chocolate lava cake with molten center and vanilla ice cream" class="w-full h-full object-cover">
+                     </div>
+                     <div class="p-6">
+                         <div class="flex justify-between items-start mb-2">
+                             <h4 class="text-xl font-bold">Chocolate Lava Cake</h4>
+                             <span class="text-lg font-bold text-amber-600">$9.50</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Warm chocolate cake with molten center, served with vanilla bean ice cream and raspberry coulis</p>
+                        <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="13" 
+                        data-name="Chocolate Lava Cake" 
+                        data-price="9.50" 
+                        data-image=<img src="images/image13.jpg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image14.jpg" alt="Crème brûlée with caramelized sugar crust and fresh berries" class="w-full h-full object-cover">
+                <div class="absolute top-0 right-0 bg-green-500 text-white px-3 py-1 m-2 rounded-full text-sm"></div>
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Classic Crème Brûlée</h4>
+                    <span class="text-lg font-bold text-amber-600">$8.50</span>
+                </div>
+                <p class="text-gray-600 mb-4">Vanilla bean custard with caramelized sugar crust, served with seasonal berries</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="14" 
+                        data-name="Classic Crème Brûlée"  
+                        data-price="8.50" 
+                        data-image=<img src="images/image14.jpg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image15.jpeg" alt="Tiramisu dusted with cocoa powder and chocolate curls" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Tiramisu</h4>
+                    <span class="text-lg font-bold text-amber-600">$9.00</span>
+                </div>
+                <p class="text-gray-600 mb-4">Traditional Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="15" 
+                        data-name="Tiramisu" 
+                        data-price="9.00" 
+                        data-image=<img src="images/image15.jpeg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image16.jpg" alt="Panna cotta with berry sauce" class="w-full h-full object-cover">
+                <div class="absolute top-0 right-0 bg-purple-500 text-white px-3 py-1 m-2 rounded-full text-sm"></div>
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Panna Cotta</h4>
+                    <span class="text-lg font-bold text-amber-600">$8.00</span>
+                </div>
+                <p class="text-gray-600 mb-4">Creamy vanilla panna cotta topped with a mixed berry sauce</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="16" 
+                        data-name="Panna Cotta" 
+                        data-price="8.00" 
+                        data-image=<img src="images/image16.jpg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image17.jpeg" alt="Cheesecake with fresh strawberries" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Strawberry Cheesecake</h4>
+                    <span class="text-lg font-bold text-amber-600">$9.50</span>
+                </div>
+                <p class="text-gray-600 mb-4">Rich and creamy cheesecake topped with fresh strawberries and a strawberry glaze</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="17" 
+                        data-name="Strawberry Cheesecake" 
+                        data-price="9.50" 
+                        data-image=<img src="images/image17.jpeg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image18.jpeg" alt="Fruit tart with seasonal fruits" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Fruit Tart</h4>
+                    <span class="text-lg font-bold text-amber-600">$8.50</span>
+                </div>
+                <p class="text-gray-600 mb-4">Delicate pastry crust filled with pastry cream and topped with seasonal fruits</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="18" 
+                        data-name="Fruit Tart" 
+                        data-price="8.50" 
+                        data-image=<img src="images/image18.jpeg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+</div> 
+            <!--Drinks-->
+            <div id="drinks" class="menu-category mb-16">
+                <h3 class="text-2xl font-bold mb-6 font-['Playfair_Display'] border-b pb-2">Drinks</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Item 1-->
+            <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="images/image19.jpeg" alt="Frosted glass of iced latte with coffee art and ice cubes" class="w-full h-full object-cover">
+                </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Iced Latte</h4>
+                    <span class="text-lg font-bold text-amber-600">$5.50</span>
+                </div>
+                <p class="text-gray-600 mb-4">Smooth espresso poured over ice with your choice of milk</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="19" 
+                        data-name="Iced Latte" 
+                        data-price="5.50" 
+                        data-image=<img src="images/image19.jpeg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 2: Lemonade -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image20.jpeg" alt="Tall glass of homemade lemonade with lemon slices and mint" class="w-full h-full object-cover">
+                <div class="absolute top-0 right-0 bg-green-500 text-white px-3 py-1 m-2 rounded-full text-sm">Homemade</div>
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Artisan Lemonade</h4>
+                    <span class="text-lg font-bold text-amber-600">$4.50</span>
+                </div>
+                <p class="text-gray-600 mb-4">Freshly squeezed lemons with a touch of honey, served ice cold</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="20" 
+                        data-name="Artisan Lemonade" 
+                        data-price="4.50" 
+                        data-image=<img src="images/image20.jpeg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 3: Craft Beer -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image21.jpeg" alt="Local craft beer with thick foam in a chilled glass" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Local IPA</h4>
+                    <span class="text-lg font-bold text-amber-600">$7.00</span>
+                </div>
+                <p class="text-gray-600 mb-4">Hoppy, citrus-forward craft IPA from our neighborhood brewery</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="21" 
+                        data-name="Local IPA" 
+                        data-price="7.00" 
+                        data-image=<img src="images/image21.jpeg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 4: House Wine -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image22.jpeg" alt="Glass of red wine on wooden table with grapes" class="w-full h-full object-cover">
+                <div class="absolute top-0 right-0 bg-purple-500 text-white px-3 py-1 m-2 rounded-full text-sm">Sommelier Pick</div>
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">House Red Wine</h4>
+                    <span class="text-lg font-bold text-amber-600">$20.00</span>
+                </div>
+                <p class="text-gray-600 mb-4">Medium-bodied red blend with notes of black cherry and spice</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="22" 
+                        data-name="House Red Wine" 
+                        data-price="20.00" 
+                        data-image=<img src="images/image22.jpeg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 5: Signature Cocktail -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image23.jpeg" alt="Cocktail with lime garnish in martini glass" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Savory Sunset</h4>
+                    <span class="text-lg font-bold text-amber-600">$12.00</span>
+                </div>
+                <p class="text-gray-600 mb-4">Our signature cocktail with vodka, blood orange, and rosemary</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="23" 
+                        data-name="Savory Sunset Cocktail" 
+                        data-price="12.00" 
+                        data-image=<img src="images/image23.jpeg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <!-- Item 6: Sparkling Water -->
+        <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+            <div class="relative h-48 overflow-hidden">
+                <img src="images/image24.jpeg" alt="Bottle of sparkling water with lime wedge and ice" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="text-xl font-bold">Sparkling Water</h4>
+                    <span class="text-lg font-bold text-amber-600">$3.50</span>
+                </div>
+                <p class="text-gray-600 mb-4">Premium mineral water with your choice of lemon or lime</p>
+                <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all"
+                        data-id="24" 
+                        data-name="Sparkling Water" 
+                        data-price="3.50" 
+                        data-image=<img src="images/image25.jpeg">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- Chef's Specials  -->
+        <div id="specials" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+              <div class="text-center mb-12">
+              <h3 class="text-3xl font-bold mb-4 font-['Playfair_Display']">Chef's Specials</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Indulge in our exclusive dishes crafted by our head chef</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Special Item 1 -->
+            <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="images/image25.jpeg" alt="Lobster Risotto with saffron and herbs" class="w-full h-full object-cover">
+                    <div class="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 m-2 rounded-full text-sm">Chef's Special</div>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold">Lobster Risotto</h4>
+                        <span class="text-lg font-bold text-amber-600">$38.00</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Creamy risotto with fresh lobster, saffron, and herbs, finished with a drizzle of truffle oil</p>
+                    <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all" 
+                            data-id="25" 
+                            data-name="Lobster Risotto" 
+                            data-price="38.00" 
+                            data-image=<img src="images/image25.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Special Item 2 -->
+            <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="images/image26.jpeg" alt="Duck Confit with seasonal vegitables" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold">Duck Confit</h4>
+                        <span class="text-lg font-bold text-amber-600">$34.00</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Slow-cooked duck leg served with seasonal vegetables and a cherry reduction sauce</p>
+                    <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all" 
+                            data-id="26" 
+                            data-name="Duck Confit" 
+                            data-price="34.00" 
+                            data-image=<img src="images/image26.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Special Item 3 -->
+            <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="images/image27.jpeg" alt="Chocolate Fondant with raspberry coulis" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold">Chocolate Fondant</h4>
+                        <span class="text-lg font-bold text-amber-600">$10.00</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Rich chocolate cake with a molten center, served with raspberry coulis and vanilla ice cream</p>
+                    <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all" 
+                            data-id="27" 
+                            data-name="Chocolate Fondant" 
+                            data-price="10.00" 
+                            data-image=<img src="images/image27.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Special Item 4 -->
+            <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="images/image28.jpeg" alt="Grilled Sea Bass with lemon butter sauce" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold">Grilled Sea Bass</h4>
+                        <span class="text-lg font-bold text-amber-600">$30.00</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Perfectly grilled sea bass served with a lemon butter sauce and seasonal vegetables</p>
+                    <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all" 
+                            data-id="28" 
+                            data-name="Grilled Sea Bass" 
+                            data-price="30.00" 
+                            data-image=<img src="images/image28.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Special Item 5 -->
+            <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="images/image29.jpeg" alt="Pork Tenderloin with apple chutney" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold">Pork Tenderloin</h4>
+                        <span class="text-lg font-bold text-amber-600">$28.00</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Juicy pork tenderloin served with apple chutney and roasted potatoes</p>
+                    <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all" 
+                            data-id="29" 
+                            data-name="Pork Tenderloin" 
+                            data-price="28.00" 
+                            data-image=<img src="images/image29.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Special Item 6 -->
+            <div class="food-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="images/image30.jpeg" alt="Vegetable Paella with saffron rice" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-xl font-bold">Vegetable Paella</h4>
+                        <span class="text-lg font-bold text-amber-600">$24.00</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">A vibrant mix of seasonal vegetables and saffron rice, served with a side of aioli</p>
+                    <button class="add-to-cart-btn w-full py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all" 
+                            data-id="30" 
+                            data-name="Vegetable Paella" 
+                            data-price="24.00" 
+                            data-image=<img src="images/image30.jpeg">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+       <script>
+    // JavaScript for category buttons
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.getAttribute('data-category');
+            document.querySelectorAll('.menu-category').forEach(categoryDiv => {
+                categoryDiv.style.display = 'none'; // Hide all categories
+            });
+            document.getElementById(category).style.display = 'block'; // Show selected category
+            categoryButtons.forEach(btn => {
+                btn.classList.remove('bg-amber-600', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-800');
+            });
+            button.classList.add('bg-amber-600', 'text-white');
+            button.classList.remove('bg-white', 'text-gray-800');
+        });
+    });
+    // Initialize by showing the first category
+    document.getElementById('starters').style.display = 'block';
+</script>
+
+
+    <!-- Reservations Section -->
+    <section id="reservations" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 font-['Playfair_Display']">Book a Table</h2>
+                <p class="text-gray-600">Reserve your spot for an unforgettable dining experience</p>
+            </div>
+            
+            <div class="bg-gray-50 rounded-lg shadow-md p-8">
+                <form id="reservation-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500">
+                    </div>
+                    <div>
+                        <label for="guests" class="block text-sm font-medium text-gray-700 mb-1">Number of Guests</label>
+                        <select id="guests" name="guests" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500">
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5">5 People</option>
+                            <option value="6">6 People</option>
+                            <option value="7">7+ People</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Date</label>
+                        <input type="date" id="date" name="date" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500">
+                    </div>
+                    <div>
+                        <label for="time" class="block text-sm font-medium text-gray-700 mb-1">Time</label>
+                        <select id="time" name="time" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500">
+                            <option value="17:00">5:00 PM</option>
+                            <option value="17:30">5:30 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="19:30">7:30 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="20:30">8:30 PM</option>
+                            <option value="21:00">9:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="notes" class="block text-sm font-medium text-gray-700 mb-1">Special Requests</label>
+                        <textarea id="notes" name="notes" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-amber-500 focus:border-amber-500"></textarea>
+                    </div>
+                    <div class="md:col-span-2">
+                        <button type="submit" class="w-full px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all">Reserve Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 font-['Playfair_Display']">What Our Guests Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear from our satisfied diners</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://placehold.co/100x100" alt="Sarah Johnson portrait" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <div class="flex text-amber-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The truffle arancini was absolutely divine - crispy outside with a creamy center packed with rich flavor. Paired perfectly with a glass of their house Chianti."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://placehold.co/100x100" alt="Marcus Chen portrait" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Marcus Chen</h4>
+                            <div class="flex text-amber-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Came here for our anniversary dinner. The ribeye was cooked perfectly medium rare, exactly as requested. The wine pairing suggestions were spot on."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://placehold.co/100x100" alt="Priya Patel portrait" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Priya Patel</h4>
+                            <div class="flex text-amber-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c
